@@ -51,3 +51,13 @@ onkeydown = (event) => {
     spinToWin.classList.toggle('spin2')
   }
 };
+
+
+let flickerButton = document.querySelector('a:nth-of-type(5)')
+
+flickerButton.addEventListener('click', flickerHandler)
+
+function flickerHandler () {
+  flickerButton.classList.toggle('flicker');
+}
+flickerButton.addEventListener('animationend', flickerHandler)

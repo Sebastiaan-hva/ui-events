@@ -65,6 +65,7 @@ a:nth-of-type(1) {
   }
 }
 
+/* spin2win button */
 a:nth-of-type(3) {
   background-color: var(--highlight-quartary);
   transition:1s;
@@ -73,13 +74,34 @@ a:nth-of-type(3) {
 .spin{
   scale:0.8;
   transform:rotateZ(360deg);
-  /* transition-duration: 1s; */
 }
 
 .spin2{
   scale:1.20;
   transform:rotateZ(-360deg);
-  /* transition-duration: 1s; */
+}
+
+/* flicker button */
+a:nth-of-type(5) {
+ background-color:rgb(43, 43, 43);
+ &:hover {
+ background-color: black;
+}
+}
+
+.flicker{
+  animation-name: flicker;
+  animation-duration:0.3s;
+  animation-iteration-count: 5;
+}
+
+@keyframes flicker {
+  from {
+    background-color: white;
+  }
+  to {
+   background-color:black;
+  }
 }
 
 /* Jump animation on the interaction link */
