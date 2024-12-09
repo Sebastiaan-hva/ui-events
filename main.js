@@ -35,3 +35,19 @@ dblClick.addEventListener('dblclick', (e) => {
 });
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
+
+
+
+// Stap 2: addEventListener
+// bibberLink.addEventListener...
+let spinToWin = document.querySelector('a:nth-of-type(3)')
+spinToWin.addEventListener('keydown', onkeydown);
+onkeydown = (event) => {
+  const { key } = event; //event.key
+
+  if (key === 'a') {
+    spinToWin.classList.toggle('spin')
+  } else if (key === 'd') {
+    spinToWin.classList.toggle('spin2')
+  }
+};
