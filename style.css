@@ -40,6 +40,30 @@ a {
 
 /* UI Event Classes */
 
+/* UI Event #1 */
+
+a:nth-of-type(1) {
+
+  /* background-color:var(--primary) */
+}
+
+.dblclick {
+  background-color: pink;
+  animation-name:dblclick;
+  animation-duration: 2s;
+}
+
+@keyframes dblclick {
+  from {
+    translate: 100vw 0;
+    scale: 200% 1;
+  }
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
 /* Jump animation on the interaction link */
 a:nth-of-type(12) {
   position: relative;

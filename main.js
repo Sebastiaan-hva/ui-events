@@ -27,9 +27,11 @@ interaction.addEventListener('animationend', jumpHandler)
 
 // Stap 1: querySelector
 // let bibberLink = document.querySelector...
-
+let dblClick = document.querySelector('a:nth-of-type(1)')
 // Stap 2: addEventListener
 // bibberLink.addEventListener...
-
+dblClick.addEventListener('dblclick', (e) => { 
+  dblClick.classList.toggle('dblclick');
+});
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
