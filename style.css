@@ -84,9 +84,10 @@ a:nth-of-type(3) {
 /* flicker button */
 a:nth-of-type(5) {
  background-color:rgb(26, 26, 26);
- &:hover {
- background-color: black;
 }
+
+a:nth-of-type(5):hover {
+  background-color: black;
 }
 
 .flicker{
@@ -107,16 +108,17 @@ a:nth-of-type(5) {
 /* expand button  */
  a:nth-of-type(7) {
   background-color:rgb(58, 0, 38);
-  /* z-index:1; */
-   &:hover {
-  background-color: hotpink ;
- } 
+  /* z-index:1; */ 
  }  
+
+ a:nth-of-type(7):hover {
+  background-color: hotpink;
+}
 
  .expand {
   animation-name:expand;
   animation-timing-function:ease-out;
-  transition-duration:4sec;
+  transition-duration:4s;
 }
 
 @keyframes expand {

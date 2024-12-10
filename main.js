@@ -25,19 +25,21 @@
 
 // Stap 1: querySelector
 // let bibberLink = document.querySelector...
-let dblClick = document.querySelector('a:nth-of-type(1)')
+
 // Stap 2: addEventListener
 // bibberLink.addEventListener...
-dblClick.addEventListener('dblclick', (e) => { 
-  dblClick.classList.toggle('dblclick');
-});
+
 // Stap 3: (Callback functie met) classList (.toggle(), .add(), etc.)
 // bibberLink.classList.toggle...
 
 
 
-// Stap 2: addEventListener
-// bibberLink.addEventListener...
+let dblClick = document.querySelector('a:nth-of-type(1)')
+dblClick.addEventListener('dblclick', (e) => { 
+  dblClick.classList.toggle('dblclick');
+});
+
+
 
 let spinToWin = document.querySelector('a:nth-of-type(3)')
 spinToWin.addEventListener('keydown', onkeydown);
@@ -52,25 +54,33 @@ onkeydown = (event) => {
 };
 
 
-let flickerButton = document.querySelector('a:nth-of-type(5)')
 
-flickerButton.addEventListener('click', flickerHandler)
 
-function flickerHandler () {
-  flickerButton.classList.toggle('flicker');
+let flickerButton = document.querySelector('a:nth-of-type(5)');
+
+if (flickerButton) {
+  // Add event listener for clicks
+  flickerButton.addEventListener('click', () => {
+    flickerButton.classList.add('flicker'); // Only add class, no toggle
+  });
+
+  // Add event listener for animation end
+  flickerButton.addEventListener('animationend', () => {
+    flickerButton.classList.remove('flicker'); // Remove class when animation ends
+  });
+} else {
+  console.error("Element 'a:nth-of-type(5)' not found.");
 }
-flickerButton.addEventListener('animationend', flickerHandler)
 
+let expandButton = document.querySelector('a:nth-of-type(7)')
 
+expandButton.addEventListener('click', expandHandler)
 
-// let expandButton = document.querySelector('a:nth-of-type(7)')
+function expandHandler () {
+  expandButton.classList.toggle('expand');
+}
+expandButton.addEventListener('animationend', expandHandler)
 
-// expandButton.addEventListener('click', expandHandler)
-
-// function expandHandler () {
-//   expandButton.classList.toggle('expand');
-// }
-// expandButton.addEventListener('animationend', expandHandler)
 
 let interaction = document.querySelector('a:nth-of-type(12)') 
   interaction.addEventListener('click', jumpHandler)  
