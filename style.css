@@ -109,6 +109,7 @@ a:nth-of-type(5):hover {
  a:nth-of-type(7) {
   background-color:rgb(58, 0, 38);
   /* z-index:1; */ 
+  
  }  
 
  a:nth-of-type(7):hover {
@@ -121,6 +122,15 @@ a:nth-of-type(5):hover {
   animation-duration:3s;
   animation-iteration-count: 1;
   position:relative;
+  text-indent: -9999px;
+  line-height: 0;
+}
+
+.expand::after{
+  content: "Pop";
+  text-indent: 0;
+  display: block;
+  line-height: initial;
 }
 
 @keyframes expand {
@@ -180,15 +190,15 @@ a:nth-of-type(11):focus {
   }
   25% {
     transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Tilt and scale */
-    box-shadow: 0 4px 10px rgba(255, 30, 0, 0.7);
+    box-shadow: 0 4px 20px rgba(255, 30, 0, 0.7);
   }
   50% {
     transform: rotateY(-10deg) rotateX(-10deg) scale(1.05); /* Other side tilt */
-    box-shadow: 0 4px 10px rgba(0, 255, 34, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 255, 34, 0.7);
   }
   75% {
     transform: rotateY(5deg) rotateX(5deg) scale(1.1); /* Return tilt */
-    box-shadow: 0 4px 10px rgba(0, 128, 255, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 128, 255, 0.7);
   }
   100% {
     transform: rotateY(0deg) rotateX(0deg) scale(1);
@@ -251,9 +261,6 @@ a:nth-of-type(13):hover {
   color: white;
 }
 
-a:nth-of-type(13):focus {
-  outline: none; 
-}
 
 /* mouseleave slamdown*/
 
@@ -263,10 +270,13 @@ a:nth-of-type(15) {
 }
 
 a:nth-of-type(15):hover {
-  color:darkgoldenrod
+  color:darkgoldenrod;
 }
 .bounce {
   animation: bounce 1.4s ease-out;
+}
+a:nth-of-type(15):hover::after{
+  content: "!";
 }
 
 @keyframes bounce {

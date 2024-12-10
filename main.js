@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Bereketn de tilt
       const tiltX = (mouseY / rect.height - 0.5) * 80; //de laatste waarde veranderen om de severity van de tilt aan te passen.
-      const tiltY = (mouseX / rect.width - 0.5) * -80; 
+      const tiltY = (mouseX / rect.width - 0.5) * -120; 
 
       targetElement.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
       targetElement.style.transition = 'transform 0.1s ease-out'; // transition smoother maken
