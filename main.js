@@ -33,14 +33,14 @@
 // bibberLink.classList.toggle...
 
 
-
+// doubleclick button
 let dblClick = document.querySelector('a:nth-of-type(1)')
 dblClick.addEventListener('dblclick', (e) => { 
   dblClick.classList.toggle('dblclick');
 });
 
 
-
+// button die rotate met input
 let spinToWin = document.querySelector('a:nth-of-type(3)')
 spinToWin.addEventListener('keydown', onkeydown);
 onkeydown = (event) => {
@@ -55,7 +55,7 @@ onkeydown = (event) => {
 
 
 
-
+// multiple flickers op click
 let flickerButton = document.querySelector('a:nth-of-type(5)');
 
 if (flickerButton) {
@@ -82,7 +82,7 @@ function expandHandler () {
 expandButton.addEventListener('animationend', expandHandler)
 
 
-
+// mouseenter glow
 document.addEventListener('DOMContentLoaded', () => {
   const targetElement = document.querySelector('a:nth-of-type(9)');
   
@@ -98,9 +98,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// Focus op element
+document.addEventListener('DOMContentLoaded', () => {
+ 
+  const targetElement = document.querySelector('a:nth-of-type(11)'); 
+  
+  if (targetElement) {
+    targetElement.addEventListener('focus', () => {
+      targetElement.classList.add('focused');
+    });
 
+    targetElement.addEventListener('blur', () => {
 
-
+// voorbeeldknop
 let interaction = document.querySelector('a:nth-of-type(12)') 
   interaction.addEventListener('click', jumpHandler)  
 

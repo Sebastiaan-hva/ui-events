@@ -17,7 +17,7 @@ body {
   margin: 2rem;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background: var(--secondary);
 }
 section {
@@ -92,8 +92,8 @@ a:nth-of-type(5):hover {
 
 .flicker{
   animation-name: flicker;
-  animation-duration:0.3s;
-  animation-iteration-count: 5;
+  animation-duration:0.25s;
+  animation-iteration-count: 8;
 }
 
 @keyframes flicker {
@@ -138,6 +138,8 @@ a:nth-of-type(5):hover {
 /* glow button */
 a:nth-of-type(9) {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+  background-color: #ececec;
+  color:rgb(2, 138, 138)
 }
 
 
@@ -154,6 +156,43 @@ a:nth-of-type(9) {
     font-size:1.1em;
     transform: scale(1.2);
     box-shadow: 0 0 30px rgba(0, 128, 255, 1);
+  }
+}
+
+/* focus button */
+
+a:nth-of-type(11) {
+  transition: all 0.3s ease;
+  background-color: #007bff;
+}
+
+a:nth-of-type(11):focus {
+  animation: tiltAndPulse 1s ease-out infinite;
+  box-shadow: 0 4px 10px rgba(0, 128, 255, 0.7); /* Shadow effect */
+  color: white;
+  background-color: #007bff; /* Background color change */
+}
+
+@keyframes tiltAndPulse {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Tilt and scale */
+    box-shadow: 0 4px 10px rgba(255, 30, 0, 0.7);
+  }
+  50% {
+    transform: rotateY(-10deg) rotateX(-10deg) scale(1.05); /* Other side tilt */
+    box-shadow: 0 4px 10px rgba(0, 255, 34, 0.7);
+  }
+  75% {
+    transform: rotateY(5deg) rotateX(5deg) scale(1.1); /* Return tilt */
+    box-shadow: 0 4px 10px rgba(0, 128, 255, 0.7);
+  }
+  100% {
+    transform: rotateY(0deg) rotateX(0deg) scale(1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.9); /* Stronger glow */
   }
 }
 
