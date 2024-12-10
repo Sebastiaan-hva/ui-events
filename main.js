@@ -82,6 +82,12 @@ function expandHandler () {
 expandButton.addEventListener('animationend', expandHandler)
 
 
+
+
+
+
+
+
 let interaction = document.querySelector('a:nth-of-type(12)') 
   interaction.addEventListener('click', jumpHandler)  
 
