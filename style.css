@@ -42,7 +42,7 @@ a {
 
 /* UI Event Classes */
 
-/* UI Event #1 */
+/* Horizontal slide in */
 
 a:nth-of-type(1) {
   background-color:var(--highlight-tertiary);
@@ -120,6 +120,7 @@ a:nth-of-type(5):hover {
   animation-timing-function:ease-out;
   animation-duration:3s;
   animation-iteration-count: 1;
+  position:relative;
 }
 
 @keyframes expand {
@@ -131,6 +132,28 @@ a:nth-of-type(5):hover {
    background-color: hotpink;
   }
   100%{
+  }
+}
+
+/* glow button */
+a:nth-of-type(9) {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+}
+
+
+.bounce-glow {
+  animation: bounceGlow 2s ease-in-out;
+}
+
+@keyframes bounceGlow {
+  0%, 100% {
+    transform: scale(1);
+    bbox-shadow: 0 0 5px rgba(255, 255, 255, 0.9);
+  }
+  50% {
+    font-size:1.1em;
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(0, 128, 255, 1);
   }
 }
 

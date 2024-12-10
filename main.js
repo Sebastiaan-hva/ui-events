@@ -83,7 +83,20 @@ expandButton.addEventListener('animationend', expandHandler)
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const targetElement = document.querySelector('a:nth-of-type(9)');
+  
+  if (targetElement) {
+    targetElement.addEventListener('mouseenter', (event) => {
+      event.preventDefault();
+      targetElement.classList.add('bounce-glow');
 
+      setTimeout(() => {
+        targetElement.classList.remove('bounce-glow');
+      }, 2000);
+    });
+  }
+});
 
 
 
