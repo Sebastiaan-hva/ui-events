@@ -254,3 +254,35 @@ a:nth-of-type(13):hover {
 a:nth-of-type(13):focus {
   outline: none; 
 }
+
+/* mouseleave slamdown*/
+
+a:nth-of-type(15) {
+  background-color: sandybrown;
+  color:indigo
+}
+
+a:nth-of-type(15):hover {
+  color:darkgoldenrod
+}
+.bounce {
+  animation: bounce 1.4s ease-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150px);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+  65% {
+    transform: scale3d(1.1, 0.5, 1) translateY(80px);
+  }
+  100% {
+    transform: scale3d(1);
+  }
+}

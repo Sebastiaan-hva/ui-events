@@ -149,3 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// mouseleave slamdown
+let mouseleaveButton = document.querySelector('a:nth-of-type(15)');
+
+mouseleaveButton.addEventListener('mouseleave', bounceEffect);
+
+function bounceEffect() {
+  mouseleaveButton.classList.add('bounce');
+}
+
+mouseleaveButton.addEventListener('animationend', removeBounce);
+
+function removeBounce() {
+  mouseleaveButton.classList.remove('bounce');
+}
