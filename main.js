@@ -109,6 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     targetElement.addEventListener('blur', () => {
+      targetElement.classList.remove('focused');
+    });
+  }
+});
 
 // voorbeeldknop
 let interaction = document.querySelector('a:nth-of-type(12)') 
@@ -119,3 +123,29 @@ function jumpHandler() {
 }
 
 interaction.addEventListener('animationend', jumpHandler)
+
+// mouseY, mouseX
+document.addEventListener('DOMContentLoaded', () => {
+  const targetElement = document.querySelector('a:nth-of-type(13)')
+  
+  if (targetElement) {
+    targetElement.addEventListener('mousemove', (event) => {
+      const rect = targetElement.getBoundingClientRect();
+      const mouseX = event.clientX - rect.left; // Mouse relatief de linker kant van het element
+      const mouseY = event.clientY - rect.top;  // Mouse relatief van de bovenkant vna het element
+      
+      // Bereketn de tilt
+      const tiltX = (mouseY / rect.height - 0.5) * 80; //de laatste waarde veranderen om de severity van de tilt aan te passen.
+      const tiltY = (mouseX / rect.width - 0.5) * -80; 
+
+      targetElement.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+      targetElement.style.transition = 'transform 0.1s ease-out'; // transition smoother maken
+    });
+
+    // Reset the tilt effect when mouse leaves the element
+    targetElement.addEventListener('mouseleave', () => {
+      targetElement.style.transform = 'rotateX(0deg) rotateY(0deg)'; // Reset
+      targetElement.style.transition = 'transform 0.2s ease'; // Reset smoothness
+    });
+  }
+});

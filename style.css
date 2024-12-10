@@ -196,6 +196,8 @@ a:nth-of-type(11):focus {
   }
 }
 
+
+
 /* Jump animation on the interaction link */
 a:nth-of-type(12) {
   position: relative;
@@ -236,4 +238,19 @@ a:nth-of-type(12) {
 }
 
 
-/* Hieronder komen jouw animaties */
+/* clientX and clientY mousemove*/
+a:nth-of-type(13) {
+  background-color: burlywood;
+  color: #778a9e;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+a:nth-of-type(13):hover {
+  background-color: #778a9e;
+  color: white;
+}
+
+a:nth-of-type(13):focus {
+  outline: none; 
+}
