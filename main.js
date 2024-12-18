@@ -47,8 +47,10 @@ onkeydown = (event) => {
   const { key } = event; //event.key
 
   if (key === 'a') {
+    spinToWin.classList.remove('spin2')
     spinToWin.classList.toggle('spin')
   } else if (key === 'd') {
+    spinToWin.classList.remove('spin')
     spinToWin.classList.toggle('spin2')
   }
 };

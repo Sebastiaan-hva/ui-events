@@ -60,7 +60,7 @@ a:nth-of-type(1) {
     scale: 200% 1;
   }
   to {
-    translate: 0 0;
+    translate: 0 100vw;
     scale: 100% 1;
   }
 }
@@ -269,8 +269,14 @@ a:nth-of-type(15) {
   color:indigo
 }
 
+a:nth-of-type(15)::before {
+  content:"feedback";
+}
 a:nth-of-type(15):hover {
   color:darkgoldenrod;
+}
+a:nth-of-type(15):hover::before {
+  content:"Ouch!";
 }
 .bounce {
   animation: bounce 1.4s ease-out;
